@@ -1,150 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>$SWMPCOOL - Built on Solana</title>
-    <!-- Include Google Fonts stylesheet -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nabla&family=Honk&display=swap">
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #222;
-            margin: 0;
-            overflow: hidden;
-            background: linear-gradient(90deg, #ff6347, #ff4500, #ffd700, #32cd32, #1e90ff);
-            animation: gradientShift 12s ease infinite;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$SWMPCOOL</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comic+Sans+MS&display=swap">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Comic Sans MS", sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(-45deg, #ff0000, #ffff00, #00ff00, #0000ff);
+      background-size: 400% 400%;
+      animation: gradientShift 10s infinite;
+    }
 
-        @keyframes gradientShift {
-            0% { background: linear-gradient(90deg, #ff6347, #ff4500, #ffd700, #32cd32, #1e90ff); }
-            25% { background: linear-gradient(90deg, #ff4500, #ffd700, #32cd32, #1e90ff, #ff6347); }
-            50% { background: linear-gradient(90deg, #ffd700, #32cd32, #1e90ff, #ff6347, #ff4500); }
-            75% { background: linear-gradient(90deg, #32cd32, #1e90ff, #ff6347, #ff4500, #ffd700); }
-            100% { background: linear-gradient(90deg, #1e90ff, #ff6347, #ff4500, #ffd700, #32cd32); }
-        }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-        .container {
-            position: relative;
-            perspective: 1000px;
-            height: 50vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .spinning-text {
+      position: relative;
+      perspective: 1000px;
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-        .text {
-            position: absolute;
-            font-size: 80px;
-            font-weight: bold;
-            color: white;
-            animation: spin 5s linear infinite;
-            transform-style: preserve-3d;
-            text-align: center;
-        }
+    .text {
+      position: absolute;
+      font-size: 6vw; /* Scales with screen width */
+      font-weight: bold;
+      color: white;
+      animation: spin 10s linear infinite;
+      transform-style: preserve-3d;
+      text-align: center;
+    }
 
-        .text-layer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            transform-origin: center;
-            transform: translateZ(0);
-            text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-        }
+    .text-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: center;
+      text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+    }
 
-        @keyframes spin {
-            from {
-                transform: rotateY(0deg);
-            }
-            to {
-                transform: rotateY(360deg);
-            }
-        }
+    @keyframes spin {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(360deg); }
+    }
 
-        h1 {
-            color: white;
-            font-family: 'Helvetica Neue', sans-serif;
-            font-size: 24px;
-            text-align: center;
-            margin-top: 20px;
-        }
+    h1 {
+      color: white;
+      text-align: center;
+      margin: 20px;
+      font-size: 4vw; /* Scales with screen width */
+      max-width: 90%;
+    }
 
-        .subtext {
-            color: white;
-            font-family: 'Comic Sans MS', sans-serif;
-            font-size: 1.5em;
-            text-align: center;
-            margin-top: 20px;
-        }
+    .button-container {
+      margin-top: 20px;
+    }
 
-        .button {
-            padding: 20px 40px;
-            font-size: 1.5em;
-            background: #ff6347;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            margin-top: 30px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            text-align: center;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    .button {
+      display: inline-block;
+      background-color: white;
+      color: black;
+      padding: 10px 20px;
+      font-size: 4vw; /* Scales with screen width */
+      font-weight: bold;
+      text-transform: uppercase;
+      border-radius: 25px;
+      text-align: center;
+      transition: transform 0.2s, background-color 0.3s;
+    }
 
-        .button:hover {
-            background: #ff4500;
-        }
+    .button:hover {
+      background-color: #f0f0f0;
+      transform: scale(1.1);
+    }
 
-        footer {
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            text-align: center;
-            color: white;
-            font-size: 1.2em;
-        }
+    @media (max-width: 768px) {
+      .text {
+        font-size: 8vw;
+      }
 
-        footer a {
-            color: #FFD700;
-            text-decoration: none;
-        }
+      h1 {
+        font-size: 5vw;
+      }
 
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+      .button {
+        font-size: 5vw;
+        padding: 8px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .text {
+        font-size: 10vw;
+      }
+
+      h1 {
+        font-size: 6vw;
+      }
+
+      .button {
+        font-size: 6vw;
+        padding: 6px 12px;
+      }
+    }
+  </style>
 </head>
 <body>
-
-    <div class="container" aria-label="$SWMPCOOL Token">
-        <div id="spinningText" class="text" style="font-family: 'Nabla', sans-serif;">
-            <div class="text-layer" style="transform: translateZ(-10px);">$SWMPCOOL</div>
-            <div class="text-layer" style="transform: translateZ(-8px);">$SWMPCOOL</div>
-            <div class="text-layer" style="transform: translateZ(-6px);">$SWMPCOOL</div>
-            <div class="text-layer" style="transform: translateZ(-4px);">$SWMPCOOL</div>
-            <div class="text-layer" style="transform: translateZ(-2px);">$SWMPCOOL</div>
-            <div class="text-layer" style="transform: translateZ(0px);">$SWMPCOOL</div>
-            <div class="text-layer" style="transform: translateZ(2px);">$SWMPCOOL</div>
-            <div class="text-layer" style="transform: translateZ(4px);">$SWMPCOOL</div>
-            <div class="text-layer" style="transform: translateZ(6px);">$SWMPCOOL</div>
-            <div class="text-layer" style="transform: translateZ(8px);">$SWMPCOOL</div>
-            <div class="text-layer" style="transform: translateZ(10px);">$SWMPCOOL</div>
-        </div>
+  <div class="spinning-text">
+    <div class="text">
+      <div class="text-layer" style="transform: translateZ(-10px);">$SWMPCOOL</div>
+      <div class="text-layer" style="transform: translateZ(-8px);">$SWMPCOOL</div>
+      <div class="text-layer" style="transform: translateZ(-6px);">$SWMPCOOL</div>
+      <div class="text-layer" style="transform: translateZ(-4px);">$SWMPCOOL</div>
+      <div class="text-layer" style="transform: translateZ(-2px);">$SWMPCOOL</div>
+      <div class="text-layer" style="transform: translateZ(0px);">$SWMPCOOL</div>
+      <div class="text-layer" style="transform: translateZ(2px);">$SWMPCOOL</div>
+      <div class="text-layer" style="transform: translateZ(4px);">$SWMPCOOL</div>
+      <div class="text-layer" style="transform: translateZ(6px);">$SWMPCOOL</div>
+      <div class="text-layer" style="transform: translateZ(8px);">$SWMPCOOL</div>
+      <div class="text-layer" style="transform: translateZ(10px);">$SWMPCOOL</div>
     </div>
-
-    <h1>Built on the revolutionary Solana blockchain</h1>
-    <p class="subtext">A whole new way to trade money safely and securely with friends and family.</p>
-    <button class="button" onclick="window.location.href='https://www.solana.com/'">Learn More</button>
-
-    <footer>
-        <p>Created with love for $SWMPCOOL | <a href="https://www.solana.com/" target="_blank">Powered by Solana</a></p>
-    </footer>
-
+  </div>
+  <h1>A whole new way to trade money safely and securely with friends and family.</h1>
+  <div class="button-container">
+    <a href="#learn-more" class="button">Learn More</a>
+  </div>
 </body>
 </html>
