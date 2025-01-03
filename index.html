@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$SWMPCOOL - Built on Solana</title>
+    <!-- Include Google Fonts stylesheet -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nabla&family=Honk&display=swap">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+            margin: 0;
+            overflow: hidden;
+            background: linear-gradient(90deg, #ff6347, #ff4500, #ffd700, #32cd32, #1e90ff);
+            animation: gradientShift 12s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background: linear-gradient(90deg, #ff6347, #ff4500, #ffd700, #32cd32, #1e90ff); }
+            25% { background: linear-gradient(90deg, #ff4500, #ffd700, #32cd32, #1e90ff, #ff6347); }
+            50% { background: linear-gradient(90deg, #ffd700, #32cd32, #1e90ff, #ff6347, #ff4500); }
+            75% { background: linear-gradient(90deg, #32cd32, #1e90ff, #ff6347, #ff4500, #ffd700); }
+            100% { background: linear-gradient(90deg, #1e90ff, #ff6347, #ff4500, #ffd700, #32cd32); }
+        }
+
+        .container {
+            position: relative;
+            perspective: 1000px;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text {
+            position: absolute;
+            font-size: 80px;
+            font-weight: bold;
+            color: white;
+            animation: spin 5s linear infinite;
+            transform-style: preserve-3d;
+            text-align: center;
+        }
+
+        .text-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: center;
+            transform: translateZ(0);
+            text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        h1 {
+            color: white;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .subtext {
+            color: white;
+            font-family: 'Comic Sans MS', sans-serif;
+            font-size: 1.5em;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 20px 40px;
+            font-size: 1.5em;
+            background: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            margin-top: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .button:hover {
+            background: #ff4500;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 1.2em;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" aria-label="$SWMPCOOL Token">
+        <div id="spinningText" class="text" style="font-family: 'Nabla', sans-serif;">
+            <div class="text-layer" style="transform: translateZ(-10px);">$SWMPCOOL</div>
+            <div class="text-layer" style="transform: translateZ(-8px);">$SWMPCOOL</div>
+            <div class="text-layer" style="transform: translateZ(-6px);">$SWMPCOOL</div>
+            <div class="text-layer" style="transform: translateZ(-4px);">$SWMPCOOL</div>
+            <div class="text-layer" style="transform: translateZ(-2px);">$SWMPCOOL</div>
+            <div class="text-layer" style="transform: translateZ(0px);">$SWMPCOOL</div>
+            <div class="text-layer" style="transform: translateZ(2px);">$SWMPCOOL</div>
+            <div class="text-layer" style="transform: translateZ(4px);">$SWMPCOOL</div>
+            <div class="text-layer" style="transform: translateZ(6px);">$SWMPCOOL</div>
+            <div class="text-layer" style="transform: translateZ(8px);">$SWMPCOOL</div>
+            <div class="text-layer" style="transform: translateZ(10px);">$SWMPCOOL</div>
+        </div>
+    </div>
+
+    <h1>Built on the revolutionary Solana blockchain</h1>
+    <p class="subtext">A whole new way to trade money safely and securely with friends and family.</p>
+    <button class="button" onclick="window.location.href='https://www.solana.com/'">Learn More</button>
+
+    <footer>
+        <p>Created with love for $SWMPCOOL | <a href="https://www.solana.com/" target="_blank">Powered by Solana</a></p>
+    </footer>
+
+</body>
+</html>
